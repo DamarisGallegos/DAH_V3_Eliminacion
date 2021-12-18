@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+      Estudiantes Activos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-content [fullscreen]="true">
+    <ion-list>
+      <div *ngFor="let student of students; index as i">
+        <ion-item  *ngIf="student.active">
+          <ion-label>{{student.name}}</ion-label>
+          <ion-chip color="success">
+            <ion-label>Activo</ion-label>
+          </ion-chip>
+           
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>

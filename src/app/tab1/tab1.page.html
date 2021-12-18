@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    Todos los estudiantes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <div *ngFor="let student of students; index as i">
+
+      
+      <ion-item-sliding (ionSwipe)="operation(i, $event)">
+        <ion-item>
+          <ion-label>{{student.name}}</ion-label>
+          <ion-chip color="success" *ngIf="student.active">
+            <ion-label>Activo</ion-label>
+          </ion-chip>
+          <ion-chip color="danger" *ngIf="!student.active">
+            <ion-label>Inactivo</ion-label>
+          </ion-chip>
+        </ion-item>
+
+        <ion-item-options side="start">
+        </ion-item-options>
+       
+        <ion-item-options side="end">
+        </ion-item-options>
+
+
+      </ion-item-sliding>
+
+    </div>
+  </ion-list>
+</ion-content>
